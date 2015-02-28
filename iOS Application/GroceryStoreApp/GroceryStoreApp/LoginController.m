@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Jason Malutich. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginController.h"
 #import "ServerCommManager.h"
 
-@interface ViewController ()
+@interface LoginController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ViewController
+@implementation LoginController
 
 -(void)viewDidLoad{
     NSLog(@"View did load");
@@ -47,5 +47,34 @@
         _response.text = returnMessage;
     }
 }
+
+- (IBAction)EditingDidBegin:(UITextField *)sender {
+    sender.text = @"";
+    sender.textColor = [UIColor blackColor];
+    sender.font = [UIFont systemFontOfSize:15];
+}
+
+- (IBAction)EditingDidEnd:(UITextField *)sender {
+    if ([sender.text isEqual:@""]){
+        NSLog(@"restoring defaults");
+        [self RestoreFieldToDefault:sender];
+    }
+}
+
+- (void)RestoreFieldToDefault:(UITextField *)field {
+    if ([field isEqual:_username]){
+        NSLog(@"setting username field text");
+        field.text = @" USERNAME";
+    }
+    else{
+        NSLog(@"setting password field text");
+        field.text = @" PASSWORD";
+    }
+    
+    field.textColor = [UIColor colorWithRed:149/255.0f green:149/255.0f blue:149/255.0f alpha:1];
+    field.font = [UIFont italicSystemFontOfSize:18];
+}
+
+
 
 @end
