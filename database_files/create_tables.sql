@@ -2,13 +2,12 @@
 *    Drop tables
 *****************************/
 DROP TABLE IF EXISTS USERS;
-DROP TABLE IF EXISTS STORES;
-DROP TABLE IF EXISTS LAYOUTS;
 DROP TABLE IF EXISTS LOCATIONS;
+DROP TABLE IF EXISTS LAYOUTS;
+DROP TABLE IF EXISTS STORES;
 DROP TABLE IF EXISTS ITEMS;
 DROP TABLE IF EXISTS CATEGORIES;
 DROP TABLE IF EXISTS AISLES;
-DROP TABLE IF EXISTS AISLES_LOCATIONS;
 
 /*****************************
 *     Create USERS
@@ -26,61 +25,76 @@ CREATE TABLE USERS (
 *    Create STORES
 *****************************/
 CREATE TABLE STORES (
-    stores_id   INT(32)     UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    store_id   INT(32)     UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     companyName VARCHAR(30) NOT NULL
 ) ENGINE=InnoDB; 
+
 
 
 /*****************************
 *    Create LAYOUTS
 *****************************/
 CREATE TABLE LAYOUTS (
-    layouts_id  INT(32)     UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    stores_id   INT(32)     NOT NULL,
+    layout_id  INT(32)     UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    store_id   INT(32)     UNSIGNED NOT NULL,
     imagePath   VARCHAR(50),
-    FOREIGN KEY (stores_id) REFERENCES STORES.stores_id
-) ENGINE=InnoDB; 
+    FOREIGN KEY (store_id) REFERENCES STORES (store_id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 
 /*****************************
 *    Create LOCATIONS
 *****************************/
 CREATE TABLE LOCATIONS (
-) ENGINE=InnoDB; 
-
-
-/*****************************
-*    Create ITEMS
-*****************************/
-CREATE TABLE ITEMS (
-) ENGINE=InnoDB; 
+    location_id INT(32)    UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    store_id    INT(32)    UNSIGNED NOT NULL,
+    layout_id   INT(32)    UNSIGNED,
+    address     VARCHAR(50)    NOT NULL,
+    city        VARCHAR(30)    NOT NULL,
+    state       VARCHAR(2)     NOT NULL,
+    zipcode     VARCHAR(10)    NOT NULL,
+    FOREIGN KEY (store_id) REFERENCES STORES (store_id) ON DELETE CASCADE,
+    FOREIGN KEY (layout_id) REFERENCES LAYOUTS (layout_id)
+) ENGINE=InnoDB;
 
 
 /*****************************
 *    Create CATEGORIES
 *****************************/
 CREATE TABLE CATEGORIES (
-) ENGINE=InnoDB; 
+    category_id    INT(32) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    category    VARCHAR(30) NOT NULL
+) ENGINE=InnoDB;
+
+/*****************************
+*    Create ITEMS
+*****************************/
+CREATE TABLE ITEMS (
+    item_id    INT(32)    UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    category_id INT(32)   UNSIGNED,
+    UPC        VARCHAR(50) NOT NULL,
+    name       VARCHAR(50) NOT NULL,
+    manufacturer VARCHAR(50) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES CATEGORIES (category_id)
+) ENGINE=InnoDB;
 
 
 /*****************************
 *    Create AISLES
 *****************************/
-CREATE TABLE AISLES (
-) ENGINE=InnoDB; 
+/*CREATE TABLE AISLES (
+    aisleNumber    INT(16) UNSIGNED NOT NULL,
+    layout_id    INT(32) NOT NULL,
+    PRIMARY KEY (aisleNumber, layout_id),
+    FOREIGN KEY (layout_id) REFERENCES LAYOUTS.layout_id    
+) ENGINE=InnoDB; */
 
 
 /*****************************
-*    Create AISLES_LOCATIONS
+*    Create ITEMS_AISLES
 *****************************/
-CREATE TABLE AISLES_LOCATIONS (
-) ENGINE=InnoDB;
+/*CREATE TABLE ITEMS_AISLES (
+    item_aisle_id    INT(32)    UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+) ENGINE=InnoDB;*/
 
-INSERT INTO USERS (username, firstname, lastname, email, password)
-    VALUES ("test", "Jason", "Malutich", "jmalutich@gmail.com", PASSWORD("test"));
-
-INSERT INTO USERS (username, firstname, lastname, email, password)
-    VALUES ("test1", "Danny", "Malutich", "danoonez@gmail.com", PASSWORD("test1"));
-
-INSERT INTO USERS (username, firstname, lastname, email, password)
-    VALUES ("test2", "Mary", "Malutich", "mary.malutich@gmail.com", PASSWORD("test2"));
