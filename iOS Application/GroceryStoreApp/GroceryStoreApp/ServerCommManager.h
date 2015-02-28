@@ -10,6 +10,8 @@
 
 @interface ServerCommManager : NSObject
 
--(void)LoginWithUsername:(NSString*)username AndPassword:(NSString*)password;
+-(BOOL)LoginWithUsername:(NSString*)username
+             AndPassword:(NSString*)password
+        AndReturnMessage:(NSString**)returnMessage;
 
 @end

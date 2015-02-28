@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UILabel *response;
 @property (strong, nonatomic) ServerCommManager *commManager;
 
 @end
@@ -21,18 +22,30 @@
 
 -(void)viewDidLoad{
     NSLog(@"View did load");
-    self.commManager = [[ServerCommManager alloc]init];
+    _commManager = [[ServerCommManager alloc]init];
 }
 
 - (IBAction)LoginButtonClicked:(UIButton *)sender {
     NSString *user = self.username.text;
     NSString *pw = self.password.text;
     if([user length]==0 || [pw length]==0){
-        NSLog(@"Attempt to login with no username and/or password");
+        NSLog(@"Attempt to log in with no username and/or password");
         return;
     }
+    NSString *returnMessage;
     
-    [self.commManager LoginWithUsername:user AndPassword:pw];
+    BOOL loginSuccessful = [_commManager LoginWithUsername:user
+                                               AndPassword:pw
+                                          AndReturnMessage:&returnMessage];
+    
+    if (loginSuccessful)
+    {
+        _response.text = returnMessage;
+    }
+    else
+    {
+        _response.text = returnMessage;
+    }
 }
 
 @end
