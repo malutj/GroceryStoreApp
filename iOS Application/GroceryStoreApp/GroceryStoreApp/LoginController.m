@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  LoginController.m
 //  GroceryStoreApp
 //
 //  Created by Jason Malutich on 12/18/14.
@@ -21,7 +21,6 @@
 @implementation LoginController
 
 -(void)viewDidLoad{
-    NSLog(@"View did load");
     _commManager = [[ServerCommManager alloc]init];
 }
 
@@ -74,7 +73,6 @@
     field.textColor = [UIColor colorWithRed:149/255.0f green:149/255.0f blue:149/255.0f alpha:1];
     field.font = [UIFont italicSystemFontOfSize:18];
 }
-
 
 
 @end

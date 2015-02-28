@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" USERNAME" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cbm-0d-Zfh" userLabel="Username Field">
-                                <rect key="frame" x="78" y="276" width="164" height="30"/>
+                                <rect key="frame" x="78" y="275" width="164" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.58573190789473684" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" PASSWORD" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-tt-qiq" userLabel="Password Field">
-                                <rect key="frame" x="78" y="321" width="164" height="30"/>
+                                <rect key="frame" x="78" y="320" width="164" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
@@ -39,25 +39,32 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJq-Pb-vFI">
-                                <rect key="frame" x="9" y="405" width="303" height="126"/>
+                                <rect key="frame" x="9" y="404" width="303" height="126"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UF-UA-nCq">
-                                <rect key="frame" x="78" y="367" width="164" height="30"/>
-                                <color key="backgroundColor" red="0.66015625" green="0.66015625" blue="0.66015625" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="78" y="366" width="164" height="30"/>
+                                <color key="backgroundColor" red="0.77012310606060608" green="0.77012310606060608" blue="0.77012310606060608" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="LOGIN">
-                                    <color key="titleColor" red="0.098039215686274508" green="0.29411764705882354" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="LoginButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aLo-e1-hxi"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="vWx-Mj-fD6">
-                                <rect key="frame" x="31" y="99" width="240" height="128"/>
+                                <rect key="frame" x="31" y="98" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-gh-aRa">
+                                <rect key="frame" x="122" y="430" width="76" height="27"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uiX-jJ-0X3" kind="presentation" identifier="GoRegister" id="owz-ew-dmn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.92386239035087703" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -70,7 +77,152 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408" y="263"/>
+            <point key="canvasLocation" x="324" y="289"/>
+        </scene>
+        <!--Register Controller-->
+        <scene sceneID="E0Z-6c-UeQ">
+            <objects>
+                <viewController id="uiX-jJ-0X3" customClass="RegisterController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0XM-zO-CH2"/>
+                        <viewControllerLayoutGuide type="bottom" id="iM1-rZ-5b9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eKd-Xg-YFr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbf-23-2k9">
+                                <rect key="frame" x="112" y="82" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="DTo-ns-cTw"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUC-fA-he9">
+                                <rect key="frame" x="127" y="475" width="67" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelButtonPressed:" destination="uiX-jJ-0X3" eventType="touchUpInside" id="jmC-6H-dTe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uov-bK-sld">
+                                <rect key="frame" x="112" y="263" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="GS9-d4-Xvk"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRa-d8-WpV">
+                                <rect key="frame" x="27" y="266" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUl-Mk-clb">
+                                <rect key="frame" x="112" y="303" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="g8I-eS-ftR"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat Password" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apB-dY-PKh">
+                                <rect key="frame" x="27" y="297" width="88" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yo-2h-xVM">
+                                <rect key="frame" x="70" y="86" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHz-oP-UIW">
+                                <rect key="frame" x="112" y="120" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="tln-NX-vGx"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8X-Tt-f47">
+                                <rect key="frame" x="70" y="124" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nV7-Jt-9rE">
+                                <rect key="frame" x="112" y="158" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="X2E-nI-Qfg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyO-vh-wB6">
+                                <rect key="frame" x="62" y="162" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dIW-bq-oxS">
+                                <rect key="frame" x="112" y="225" width="164" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ResetField:" destination="uiX-jJ-0X3" eventType="editingDidBegin" id="Djy-t6-kbH"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-HL-lS1">
+                                <rect key="frame" x="25" y="229" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcO-Wj-hgH">
+                                <rect key="frame" x="78" y="383" width="164" height="34"/>
+                                <color key="backgroundColor" red="0.77012310610000001" green="0.77012310610000001" blue="0.77012310610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="LoginButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RfP-uS-TIt"/>
+                                    <action selector="RegisterButtonPressed:" destination="uiX-jJ-0X3" eventType="touchUpInside" id="fnd-ud-qac"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkh-EN-w1y">
+                                <rect key="frame" x="31" y="354" width="258" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.91974198190789469" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="email" destination="nV7-Jt-9rE" id="Qg7-a7-TFu"/>
+                        <outlet property="feedback" destination="Lkh-EN-w1y" id="nR1-JJ-efT"/>
+                        <outlet property="first_name" destination="Hbf-23-2k9" id="37A-ZS-uTP"/>
+                        <outlet property="last_name" destination="BHz-oP-UIW" id="kpX-xR-F8P"/>
+                        <outlet property="password" destination="Uov-bK-sld" id="7rF-st-vtS"/>
+                        <outlet property="password2" destination="ZUl-Mk-clb" id="5aD-sx-lZb"/>
+                        <outlet property="username" destination="dIW-bq-oxS" id="ih5-FG-AdW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhb-S2-r23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715" y="289"/>
         </scene>
     </scenes>
     <resources>

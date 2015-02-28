@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091524331AA1955F006E3741 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091524321AA1955F006E3741 /* RegisterController.m */; };
 		0973F98D1A43D4E200DB1A8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0973F98C1A43D4E200DB1A8C /* main.m */; };
 		0973F9901A43D4E200DB1A8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0973F98F1A43D4E200DB1A8C /* AppDelegate.m */; };
 		0973F9931A43D4E200DB1A8C /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0973F9921A43D4E200DB1A8C /* LoginController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091524321AA1955F006E3741 /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
+		091524341AA19592006E3741 /* RegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		0973F9871A43D4E200DB1A8C /* GroceryStoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryStoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0973F98B1A43D4E200DB1A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0973F98C1A43D4E200DB1A8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 			children = (
 				0973F9911A43D4E200DB1A8C /* LoginController.h */,
 				0973F9921A43D4E200DB1A8C /* LoginController.m */,
+				091524321AA1955F006E3741 /* RegisterController.m */,
+				091524341AA19592006E3741 /* RegisterController.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				0973F9931A43D4E200DB1A8C /* LoginController.m in Sources */,
 				0973F9901A43D4E200DB1A8C /* AppDelegate.m in Sources */,
 				0973F98D1A43D4E200DB1A8C /* main.m in Sources */,
+				091524331AA1955F006E3741 /* RegisterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
